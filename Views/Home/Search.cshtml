@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "Onboarding Recycle";
+}
+<style>
+    .NameTitle {
+        font-size: 30px;
+    }
+
+    .searchWaste {
+        background-image: url("/Images/waste-background.png");
+        background-size: cover;
+    }
+
+    .title {
+        font-size: 80px;
+    }
+
+    .Camera {
+        background-color: inherit;
+        border: 0px solid;
+    }
+
+        .Camera:hover {
+            background-color: azure;
+        }
+
+    .textfield {
+        border-width: 0;
+    }
+
+    .Topic {
+        display: flex;
+        position: relative;
+        left: 100px;
+    }
+</style>
+
+<div class="searchWaste">
+    <div class="WasteTitle" valign="middle">
+        <div class="Name">
+            <p class="NameTitle">Waste Recycling</p>
+        </div>
+        <br />
+        <br />
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="Topic">
+            <img src="~/Images/Line 1.png" />
+            <h1 class="title" style="position:relative;left:50px">Start waste<br />revolution from<br /> your community</h1>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+</div>
+<br />
+<div class="row">
+    <div align="center">
+        <input type="text" class="textfield" placeholder="Srearch fo your free waste disposal solutions..." style="font-size:30px; width: 1500px; height: 60px; background-color: #EBFBEE" />
+        <button class="Search" style="height:60px;position: absolute; right:90px;">
+            <img src="~/Images/Vector.png" style="width:60px;height:60px" />
+        </button>
+        <button class="Camera" id="photo1" style="position: absolute; right:15px;">
+            <img src="~/Images/scanning 1.png" style="width:60px;height:60px" />
+        </button>
+    </div>
+
+</div>
+<div class="footer" align="center">
+    <br />
+    <br />
+    <br />
+    <br />
+    <footer class="ftext">Thank you for doing your part in waste disposal</footer>
+</div>
