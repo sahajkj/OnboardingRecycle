@@ -1,6 +1,4 @@
-﻿@model IEnumerable<OnboardingRecycle.Models.Item>
-@{
-    ViewBag.Title = "index";
+﻿@{
     Layout = Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -11,13 +9,6 @@
     <meta name="viewport" content="width=device-width" />
     <title></title>
     <style>
-        .table {
-            font-family: 'Calibri';
-            font-size: 20px;
-            column-width: 100px;
-
-            border-width: 0;
-        }
         .NameTitle {
             font-size: 30px;
         }
@@ -94,39 +85,26 @@
         </div>
     </div>
     <br />
-    <form asp-controller="Home" asp.action="Index" method="get">
-        <div class="row">
-            <div align="center">
-                <input type="text" name="searchString" class="textfield" placeholder="Srearch for your free waste disposal solutions..." style="font-size:100%; width: 70%; height: 60px; background-color: #EBFBEE" />
-                <input type="image" src="~/Images/Vector.png" class="Search" style="height:60px;position: relative; right:150px; top:23px;" />
-
-                <img src="~/Images/Line 2.png" style="height:60px;position: relative; right:143px; top:23px;" />
-                <submit class="Camera" id="photo1" style="position: relative; right:138px;top:23px;">
-                    <img src="~/Images/upload 1.png" style="width:60px;height:60px" />
-                </submit>
-            </div>
-        </div>
-    </form>
-    <table class="table" align="center">
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.name)
-                </td>
-                <td>
-                    @Html.ActionLink("Check", "Details", new { id = item.item_id })
-                </td>
-            </tr>
-        }
-     </table>
-        <div class="footer" align="center">
-            <br />
-            <br />
-            <br />
-            <br />
-            <footer class="ftext">Thank you for doing your part in waste disposal</footer>
+    <div class="row">
+        <div align="center">
+            <input type="text" class="textfield" placeholder="Srearch for your free waste disposal solutions..." style="font-size:100%; width: 70%; height: 60px; background-color: #EBFBEE" />
+            <submit class="Search" style="height:60px;position: relative; right:150px; top:23px;">
+                <img src="~/Images/Vector.png" style="width:60px;height:60px" />
+            </submit>
+            <img src="~/Images/Line 2.png" style="height:60px;position: relative; right:143px; top:23px;" />
+            <submit class="Camera" id="photo1" style="position: relative; right:138px;top:23px;">
+                <img src="~/Images/upload 1.png" style="width:60px;height:60px" />
+            </submit>
         </div>
 
+    </div>
+    <div class="footer" align="center">
+        <br />
+        <br />
+        <br />
+        <br />
+        <footer class="ftext">Thank you for doing your part in waste disposal</footer>
+    </div>
+    
 </body>
 </html>

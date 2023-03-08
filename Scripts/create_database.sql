@@ -1,6 +1,11 @@
-﻿
-CREATE TABLE [dbo].[Item] (
-  [item_id] int NOT NULL, 
+DROP DATABASE IF EXISTS [waste_disposal];
+CREATE DATABASE [waste_disposal]; 
+USE [waste_disposal];
+
+SET NAMES utf8 ;
+
+CREATE TABLE [Item] (
+  [item_id] int(11) NOT NULL, 
   [name] varchar(50) NOT NULL,
   [method] varchar(512) NOT NULL,
   PRIMARY KEY ([item_id])
@@ -11,8 +16,8 @@ INSERT INTO [Item] VALUES (3,'Batteries','Batteries should be never be placed in
 INSERT INTO [Item] VALUES (4,'Dry cleaning bags','Dry cleaning bags from the laundromat are made of soft plastics. These can be recycled through a soft plastic recycling scheme. If in doubt, contact your local council.');
 INSERT INTO [Item] VALUES (5,'Knives','Knives in good condition can be donated or gifted. For broken knives, make sure they are packaged securely before placing in the general waste bin.');
 
-CREATE TABLE [dbo].[Classification] (
-  [class_id] int NOT NULL,
+CREATE TABLE [Classification] (
+  [class_id] int(11) NOT NULL,
   [name] varchar(50) NOT NULL,
   PRIMARY KEY ([class_id])
 ) 
@@ -21,9 +26,9 @@ INSERT INTO [Classification] VALUES (2,'General waste');
 INSERT INTO [Classification] VALUES (3,'Check with Council');
 INSERT INTO [Classification] VALUES (4,'Recycle separately');
 
-CREATE TABLE [dbo].[Item_Class] (
-  [item_id] int NOT NULL,
-  [class_id] int NOT NULL,
+CREATE TABLE [Item_Class] (
+  [item_id] int(11) NOT NULL,
+  [class_id] int(11) NOT NULL,
   PRIMARY KEY ([item_id],[class_id]),
   CONSTRAINT [fk_item_idx] FOREIGN KEY ([item_id]) REFERENCES [Item] ([item_id]),
   CONSTRAINT [fk_class_idx] FOREIGN KEY ([class_id]) REFERENCES [Classification] ([class_id]),
