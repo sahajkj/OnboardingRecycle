@@ -1,16 +1,40 @@
 ﻿@model OnboardingRecycle.Models.Item
-
 @{
     ViewBag.Title = "Details";
+
 }
 
-<h2>Details</h2>
+<style>
+    .Waste_disposal{
+        font-family:Calibri;
+        font-size:50px;
+    }
+    .display {
+        font-family: Calibri;
+        display:flex;
+    }
+    .Type{
+        font-size:30px;
+    }
+    .title{
+        font-size:20px;
+        color:aqua
+    }
+</style>
+<P class="Waste_disposal">Waste Item disposal</P>
 
-<div>
-    <h4>Item</h4>
+<p>
+    @Html.ActionLink("Back to Home >", "Index")
+</p>
+<div class="display">
+    <div>
+        <img src="~/Images/waste-hierarchy.png" style="width:500px; height:600px"/>
+    </div>
+    <div>
+    <p class="Type">@Html.DisplayFor(model =>model.name)</p>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
+        <dt class="title">
             @Html.DisplayNameFor(model => model.name)
         </dt>
 
@@ -18,17 +42,22 @@
             @Html.DisplayFor(model => model.name)
         </dd>
 
-        <dt>
+        <dt class="title">
             @Html.DisplayNameFor(model => model.method)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.method)
         </dd>
+        <dt class="title">
+            @Html.DisplayNameFor(model => model.Classifications)
+        </dt>
+
+        <dd>    
+            @Html.DisplayFor(model => model.Classifications.ToArray()[0])
+        </dd>
 
     </dl>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.item_id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
